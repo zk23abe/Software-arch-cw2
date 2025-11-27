@@ -2,13 +2,36 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CSVReader {
+
+    private HashMap<String, ArrayList<String>> data;
+
+    public HashMap<String, ArrayList<String>> getData(){
+        return data;
+    }
+
     public CSVReader(String path) {
         FileReader file = new FileReader(path);
         BufferedReader bufferedReader = new BufferedReader(file);
         String headings = bufferedReader.readLine();
-
+        ArrayList<String> headersplit = parseLine(headings);
+        //HashMap<String, ArrayList<String>> data = new HashMap<String, ArrayList<String>>();
+        for (String heading : headersplit) {
+            data.put(heading, new ArrayList<String>());
+        }
+        while(true){
+            String currentLine = bufferedReader.readLine();
+            if(currentLine == null){
+                break;
+            }
+            ArrayList<String> lineSplit = parseLine(currentLine);
+            for (int i=0; i<data.size(); i++) {
+                String heading=headersplit.get(i);
+                data.get(heading).add(lineSplit.get(i));
+            }
+        }
     }
     private ArrayList<String> parseLine(String line) throws IOException {
         ArrayList<String> list = new ArrayList<String>();
@@ -37,5 +60,7 @@ public class CSVReader {
             list.add(temp_phrase);
         }
         return list;
+
+
     }
 }

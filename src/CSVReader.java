@@ -12,11 +12,19 @@ public class CSVReader {
         return data;
     }
 
-    public CSVReader(String path) {
-        FileReader file = new FileReader(path);
-        BufferedReader bufferedReader = new BufferedReader(file);
-        String headings = bufferedReader.readLine();
-        ArrayList<String> headersplit = parseLine(headings);
+    public CSVReader(String path) throws IOException {
+        ArrayList<String> headersplit;
+        BufferedReader bufferedReader;
+        data = new HashMap<>();
+        try {
+            FileReader file = new FileReader(path);
+            bufferedReader = new BufferedReader(file);
+            String headings = bufferedReader.readLine();
+            headersplit = parseLine(headings);
+        } catch (Exception e) {
+            System.out.println(e);
+            return;
+        }
         //HashMap<String, ArrayList<String>> data = new HashMap<String, ArrayList<String>>();
         for (String heading : headersplit) {
             data.put(heading, new ArrayList<String>());

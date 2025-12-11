@@ -8,8 +8,17 @@ public class Clinican extends Person {
     public Prescription createPrescription(Patient patient, String prescriptionId, String medication, Date prescriptionDate){
         return new Prescription(patient.getpatientID(),medication,prescriptionId,this.getPersonId(),prescriptionDate);
     }
+    public String getPatientRecord(Patient patient){
+        return patient.getMedicalRecord();
+    }
 
+    public boolean getIsNurse(){
+        return isNurse;
+    }
 
+    public void updatePatientRecord(Patient patient, String newMedicalRecord){
+        patient.updateMedicalRecord(newMedicalRecord);
+    }
 
     boolean isNurse;
 }

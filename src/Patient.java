@@ -1,11 +1,15 @@
 import java.util.*;
 
 public class Patient {
-    public Patient(String medicalRecord, String patientFirstName, String patientSurname, String address) {
+    public Patient(String patientId, String medicalRecord, String patientFirstName, String patientSurname, String address) {
         this.medicalRecord = medicalRecord;
         this.patientFirstName = patientFirstName;
         this.patientSurname = patientSurname;
         this.address = address;
+    }
+
+    public String getpatientID(){
+        return patientId;
     }
 
     public String getMedicalRecord() {
@@ -47,7 +51,7 @@ public class Patient {
     public String toString(){
         return String.format(" ALl Patient Details: \n firstname: %s\n surname %s\n Address: %s\n Medical Record: %s", patientFirstName, patientSurname, address, medicalRecord);
     }
-
+    private String patientId;
     private String medicalRecord;
     private String patientFirstName;
     private String patientSurname;

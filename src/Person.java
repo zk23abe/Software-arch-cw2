@@ -6,6 +6,26 @@ public class Person {
         this.fullName = fullName;
         this.dob = dob;
     }
+
+    public String getPersonId() {
+        return personId;
+    }
+
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+
+
     String personId;
     String fullName;
     Date dob;

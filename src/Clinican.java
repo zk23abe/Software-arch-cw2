@@ -20,5 +20,15 @@ public class Clinican extends Person {
         patient.updateMedicalRecord(newMedicalRecord);
     }
 
+    @Override
+    public String toString() {
+        return "Clinican{" +
+                "isNurse=" + isNurse +
+                ", personId='" + personId + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", dob=" + dob +
+                '}';
+    }
+
     boolean isNurse;
 }

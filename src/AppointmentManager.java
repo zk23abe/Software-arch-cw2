@@ -18,8 +18,10 @@ public class AppointmentManager {
         this.appointments.add(new Appointment(appointmentId,patient.getpatientID(),clinician.getPersonId(),date));
     }
 
-    public void modifyAppointment(String AppointmentId){
 
+    public void rescheduleAppointment(String appointmentId,Date date){
+        Appointment currentAppointment = this.getAppointmentById(appointmentId);
+        currentAppointment.setDate(date);
     }
     public ArrayList<Appointment> getAppointments(){
         return this.appointments;
@@ -28,13 +30,11 @@ public class AppointmentManager {
         return this.patients;
     }
 
+
+
     public void cancelAppointment(String appointmentId){
-        for(Appointment appointment : this.appointments){
-            if(appointment.getAppointmentId().equals(appointmentId)){
-                appointments.remove(appointment);
-                return;
-            }
-        }
+        Appointment currentAppointment = this.getAppointmentById(appointmentId);
+        this.appointments.remove(currentAppointment);
     }
 
     static AppointmentManager appointmentManager = null;
@@ -44,5 +44,13 @@ public class AppointmentManager {
     private ArrayList <Clinician> clinicians = null;
     private ArrayList <Referral> referrals = null;
 
+    private Appointment getAppointmentById (String appointmentId){
+        for(Appointment appointment : this.appointments){
+            if(appointment.getAppointmentId().equals(appointmentId)){
+                return appointment;
+            }
+        }
+        return null;
+    }
 
 }

@@ -4,7 +4,11 @@ public class AdminStaff {
         this.staffFullName = fullName;
     }
 
-    public manageAppointment(AppointmentManager instance) {
+    public void cancelAppointment(AppointmentManager instance, String apptId) {
+        instance.cancelAppointment(apptId);
+    }
+    public void rescheduleAppointment(AppointmentManager instance, String apptId) {
+        instance.rescheduleAppointment(apptId);
     }
 
     public boolean isPatientExists(AppointmentManager appointmentManagerSinglton, String patientId) {

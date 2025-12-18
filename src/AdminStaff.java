@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class AdminStaff {
     public AdminStaff(String id, String fullName) {
         this.staffId = id;
@@ -7,8 +9,9 @@ public class AdminStaff {
     public void cancelAppointment(AppointmentManager instance, String apptId) {
         instance.cancelAppointment(apptId);
     }
-    public void rescheduleAppointment(AppointmentManager instance, String apptId) {
-        instance.rescheduleAppointment(apptId);
+    public void rescheduleAppointment(AppointmentManager instance, String apptId, Date date) {
+        instance.rescheduleAppointment(apptId, date);
+
     }
 
     public boolean isPatientExists(AppointmentManager appointmentManagerSinglton, String patientId) {

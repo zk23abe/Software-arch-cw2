@@ -1,3 +1,6 @@
+import Controller.AppointmentManager;
+import Model.Patient;
+
 import java.util.Date;
 
 public class AdminStaff {

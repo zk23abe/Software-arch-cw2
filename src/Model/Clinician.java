@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.*;
 
 public class Clinician extends Person {
@@ -19,6 +21,8 @@ public class Clinician extends Person {
     public void updatePatientRecord(Patient patient, String newMedicalRecord){
         patient.updateMedicalRecord(newMedicalRecord);
     }
+
+    public void createReferral
 
     @Override
     public String toString() {

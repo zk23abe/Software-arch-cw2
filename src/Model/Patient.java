@@ -1,4 +1,4 @@
-import java.util.*;
+package Model;
 
 public class Patient {
     public Patient(String patientId, String medicalRecord, String patientFirstName, String patientSurname, String address) {
@@ -45,11 +45,11 @@ public class Patient {
     }
 
     public String getDetails(){
-        return String.format("Patient Details: \n firstname: %s\n surname: %s\n Address: %s", patientFirstName, patientSurname, address );
+        return String.format("Model.Patient Details: \n firstname: %s\n surname: %s\n Address: %s", patientFirstName, patientSurname, address );
     }
 
     public String toString(){
-        return String.format(" ALl Patient Details: \n firstname: %s\n surname %s\n Address: %s\n Medical Record: %s", patientFirstName, patientSurname, address, medicalRecord);
+        return String.format(" ALl Model.Patient Details: \n firstname: %s\n surname %s\n Address: %s\n Medical Record: %s", patientFirstName, patientSurname, address, medicalRecord);
     }
     private String patientId;
     private String medicalRecord;

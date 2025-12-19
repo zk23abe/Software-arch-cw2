@@ -1,3 +1,8 @@
+package Controller;
+
+import Model.Clinician;
+import Model.Patient;
+import Model.Appointment;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,9 +19,11 @@ public class AppointmentManager {
         }
         return appointmentManager;
     }
-    public void createAppointment(String appointmentId,Patient patient, Clinician clinician, Date date){
+    public void createAppointment(String appointmentId, Patient patient, Clinician clinician, Date date){
         this.appointments.add(new Appointment(appointmentId,patient.getpatientID(),clinician.getPersonId(),date));
     }
+
+
 
 
     public void rescheduleAppointment(String appointmentId,Date date){
@@ -30,6 +37,12 @@ public class AppointmentManager {
         return this.patients;
     }
 
+    public ArrayList<Clinician> getClinicians(){
+        return this.clinicians;
+    }
+    public ArrayList<Referral> getReferrals(){
+        return this.referrals;
+    }
 
 
     public void cancelAppointment(String appointmentId){

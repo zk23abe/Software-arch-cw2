@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.Date;
 
 public class Prescription {
@@ -37,7 +39,7 @@ public class Prescription {
 
     @Override
     public String toString() {
-        return "Prescription{" +
+        return "Model.Prescription{" +
                 "\n patientid: '" + patientid + '\'' +
                 "\n medication: '" + medication + '\'' +
                 "\n prescriptionId: '" + prescriptionId + '\'' +

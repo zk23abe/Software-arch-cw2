@@ -3,6 +3,8 @@ package Controller;
 import Model.Clinician;
 import Model.Patient;
 import Model.Appointment;
+import Model.Referral;
+import Model.Specialist;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -42,6 +44,9 @@ public class AppointmentManager {
     }
     public ArrayList<Referral> getReferrals(){
         return this.referrals;
+    }
+    public void createReferral(String refId, Clinician referer ,Patient patient, Specialist referredSpecialist, Date dob){
+        this.referrals.add(new Referral(refId,referer,patient,referredSpecialist,dob));
     }
 
 

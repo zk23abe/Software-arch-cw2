@@ -1,10 +1,9 @@
-import Model.Clinician;
-import Model.Patient;
+package Model;
 
 import java.util.Date;
 
 public class Referral {
-    public Referral(String refId, Clinician referrer, Patient patient, Specialist referredSpecialist,Date date) {
+    public Referral(String refId, Clinician referrer, Patient patient, Specialist referredSpecialist, Date date) {
         this.referredSpecialist = referredSpecialist;
         this.patient = patient;
         this.referrer = referrer;
@@ -29,7 +28,7 @@ public class Referral {
 
     @Override
     public String toString() {
-        return "Referral{" +
+        return "Model.Referral{" +
                 "refId=' " + refId + '\'' +
                 ", referrer= " + referrer +
                 ", patient= " + patient +

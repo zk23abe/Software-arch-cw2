@@ -22,7 +22,7 @@ public class Clinician extends Person {
         patient.updateMedicalRecord(newMedicalRecord);
     }
 
-    public void createReferral
+
 
     @Override
     public String toString() {

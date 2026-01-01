@@ -1,5 +1,5 @@
-import Controller.AppointmentManager;
-import Model.Patient;
+import Healthcare.Model.AppointmentManager;
+import Healthcare.Model.datatypes.Patient;
 
 import java.util.Date;
 
